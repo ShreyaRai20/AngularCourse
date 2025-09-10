@@ -1,0 +1,16 @@
+<h1>Profile</h1>
+<button (click)="handleClick()">click me</button>
+
+<div>
+  <h1>{{ count }}</h1>
+  <button class="btn" (click)="increment()">increment</button>
+  <button class="btn" (click)="reset()">reset</button>
+  <button class="btn" (click)="decrement()">decrement</button>s
+</div>
+
+<div>
+  <h1>{{ count }}</h1>
+  <button class="btn" (click)="handleCounter('increment')">increment</button>
+  <button class="btn" (click)="handleCounter('reset')">reset</button>
+  <button class="btn" (click)="handleCounter('decrement')">decrement</button>s
+</div>

@@ -1,0 +1,16 @@
+h1{
+    background-color: black;
+    color:wheat
+}
+
+button{
+    background-color: aliceblue;
+}
+
+.btn{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    text-align: center;
+}
+
