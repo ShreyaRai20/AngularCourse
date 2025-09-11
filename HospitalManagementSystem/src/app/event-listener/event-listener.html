@@ -1,0 +1,37 @@
+<hr />
+
+<h1>event-listener works!</h1>
+
+<button id="event-btn" class="event-list-btn" (click)="handleClick($event)">Click Event</button>
+
+<div class="event-div" (mouseenter)="handleClick01($event)"></div>
+
+<div class="event-div" (mouseleave)="handleClick01($event)"></div>
+
+<input (input)="handleClick($event)" (focus)="handleClick($event)" (blur)="handleClick($event)" />
+
+<hr />
+
+<h1>GET AND SET INPUT VALUE</h1>
+
+<input
+  value="{{ nameVal }}"
+  (input)="getVal($event)"
+  (focus)="getVal($event)"
+  (blur)="getVal($event)"
+/>
+<button (click)="getName($event)">get Name</button>
+<button (click)="setName($event)">set Name</button>
+
+<h1>{{ displayName }}</h1>
+
+<hr />
+
+<h1>GET AND SET Email</h1>
+<h2>Template reference variable</h2>
+
+<input #emailField value="{{ email }}" />
+<button (click)="getEmail(emailField.value)">get Email</button>
+<button (click)="setEmail(emailField.value)">set Email</button>
+
+<h1>{{ email }}</h1>

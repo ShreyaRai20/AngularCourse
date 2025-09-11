@@ -1,0 +1,79 @@
+<h1>if Else | Control flow</h1>
+
+@if(display){
+
+<div style="width: 100px; height: 100px; background-color: green"></div>
+} @if(x>20){
+
+<div style="width: 100px; height: 100px; background-color: pink; margin-top: 10px"></div>
+}
+
+<button (click)="handleHide($event)">hide</button>
+<button (click)="handleShow($event)">show</button>
+
+<button (click)="handleToggle($event)">
+  {{ display ? 'show div' : 'hide div' }}
+</button>
+
+@if(display){
+
+<div style="width: 100px; height: 100px; background-color: yellowgreen; margin-top: 10px"></div>
+} @else{
+<div style="width: 100px; height: 100px; background-color: yellow; margin-top: 10px"></div>
+}
+
+<hr />
+
+<button (click)="setRed($event)">red</button>
+<button (click)="setBlue($event)">blue</button>
+<button (click)="setYellow($event)">yellow</button>
+<button (click)="setOther($event)">black</button>
+<input type="text" placholder="type color number" (input)="setChangeColorVal($event)" />
+
+@if(color===1){
+<div style="width: 100px; height: 100px; background-color: red; margin-top: 10px"></div>
+} @else if(color===2){
+<div style="width: 100px; height: 100px; background-color: blue; margin-top: 10px"></div>
+} @else if(color===3){
+<div style="width: 100px; height: 100px; background-color: yellow; margin-top: 10px"></div>
+} @else{
+<div style="width: 100px; height: 100px; background-color: black; margin-top: 10px"></div>
+}
+
+<h1>Switch case</h1>
+
+@switch(color){ @case(1){
+<div style="width: 100px; height: 100px; background-color: red; margin-top: 10px"></div>
+} @case(2){
+<div style="width: 100px; height: 100px; background-color: blue; margin-top: 10px"></div>
+} @case(3){
+<div style="width: 100px; height: 100px; background-color: yellow; margin-top: 10px"></div>
+} @default{
+<div style="width: 100px; height: 100px; background-color: black; margin-top: 10px"></div>
+} }
+
+<hr />
+
+<h1>For Loop</h1>
+
+<h1>USERS</h1>
+
+@for(user of users; track user){
+
+<h2>{{ user }}</h2>
+}
+
+<h1>STUDENTS</h1>
+
+@for(student of students; track student; let id=$index){
+<div>
+  <span style="margin: 5px">{{ $index }}</span>
+  <span style="margin: 5px">{{ student.name }}</span>
+  <span style="margin: 5px">{{ student.email }}</span>
+  <span style="margin: 5px">{{ student.age }}</span>
+  <button (click)="getName(student.name)">get Name</button>
+</div>
+
+}
+
+<h3>{{ studentName }}</h3>
