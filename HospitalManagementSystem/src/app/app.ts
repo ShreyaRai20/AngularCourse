@@ -6,11 +6,12 @@ import { Profile } from './profile/profile';
 import { EventListener } from './event-listener/event-listener';
 import { ControlFlow } from './control-flow/control-flow';
 import { Signal } from './signal/signal';
+import { Todolist } from './todolist/todolist';
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal],
+  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal, Todolist],
   templateUrl: './app.html', //view
   styleUrl: './app.css'
 })

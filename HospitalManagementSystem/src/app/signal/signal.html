@@ -1,1 +1,22 @@
 <p>signal works!</p>
+
+<h1>{{ count() }}</h1>
+<h1>{{ x }}</h1>
+
+<button (click)="count.set(20)">increace count</button>
+
+<!-- can't increase value of x/ property within html file -->
+
+<button (click)="increaseX()">increace count</button>
+
+<h1>{{ data() }}</h1>
+
+<button (click)="updateData()">update data</button>
+
+<hr />
+
+<h1>{{ c() }}</h1>
+
+<button (click)="showValue()">update data</button>
+
+<hr />
