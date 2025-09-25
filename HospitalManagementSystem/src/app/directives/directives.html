@@ -1,0 +1,75 @@
+<h1 *ngIf="show">directives works!</h1>
+
+<h1>NgFor directive</h1>
+
+<ul>
+  <li *ngFor="let x of arr">
+    {{ x }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let user of usersData">{{ user.name }}, {{ user.age }}, {{ user.email }}</li>
+</ul>
+
+<table style="border: 1px solid black">
+  <tr style="border: 1px solid black">
+    <td style="border: 1px solid black">Name</td>
+    <td style="border: 1px solid black">age</td>
+    <td style="border: 1px solid black">email</td>
+  </tr>
+
+  <tr *ngFor="let user of usersData" style="border: 1px solid black">
+    <td>{{ user.name }}</td>
+    <td>{{ user.age }}</td>
+    <td>{{ user.email }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let skill of user.skills">{{ skill }}</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h1>NgIf directive</h1>
+
+<h2 *ngIf="show">Heading</h2>
+
+<div *ngIf="login; else elseBlock">
+  <a href="#">logout</a>
+</div>
+
+<ng-template #elseBlock>
+  <a href="#">login</a>
+</ng-template>
+
+<div *ngIf="block == 1">
+  <h1>heading 1</h1>
+</div>
+
+<div *ngIf="block == 2">
+  <h1>heading 2</h1>
+</div>
+<div *ngIf="block == 3">
+  <h1>heading 3</h1>
+</div>
+
+<button (click)="updateBlock()">heading</button>
+
+<h1>NgSwitch directive</h1>
+
+<div [ngSwitch]="color">
+  <h2 *ngSwitchCase="'red'" style="color: red">Red</h2>
+  <h2 *ngSwitchCase="'green'" style="color: green">Green</h2>
+  <h2 *ngSwitchCase="'yellow'" style="color: yellow">Yellow</h2>
+  <h2 *ngSwitchCase="'blue'" style="color: blue">blue</h2>
+  <h2 *ngSwitchCase="'pink'" style="color: pink">Pink</h2>
+  <h2 *ngSwitchDefault="'black'">No color match</h2>
+</div>
+
+<button (click)="updateColor('red')">red</button>
+
+<button (click)="updateColor('green')">green</button>
+<button (click)="updateColor('yellow')">yellow</button>
+<button (click)="updateColor('blue')">blue</button>
+<button (click)="updateColor('pink')">pink</button>

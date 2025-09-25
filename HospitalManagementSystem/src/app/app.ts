@@ -7,11 +7,12 @@ import { EventListener } from './event-listener/event-listener';
 import { ControlFlow } from './control-flow/control-flow';
 import { Signal } from './signal/signal';
 import { Todolist } from './todolist/todolist';
+import { Directives } from './directives/directives';
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal, Todolist],
+  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal, Todolist, Directives],
   templateUrl: './app.html', //view
   styleUrl: './app.css'
 })
