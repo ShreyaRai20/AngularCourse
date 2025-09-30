@@ -1,0 +1,15 @@
+<p>home works!</p>
+
+<a [routerLink]="['login', { name: 'shreya' }]">go to my profile</a>
+
+<button (click)="goToProfile()">go to profile from here</button>
+
+<a routerLink="login">go to profile</a>
+
+<ul>
+  @for(user of users; track user.id){
+  <li>
+    <a routerLink="about/{{ user.id }}/{{ user.name }}">{{ user.name }}</a>
+  </li>
+  }
+</ul>

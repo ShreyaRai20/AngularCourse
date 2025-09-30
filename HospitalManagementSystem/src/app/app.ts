@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { Login } from './login/login';
 import { Profile } from './profile/profile';
@@ -8,11 +8,12 @@ import { ControlFlow } from './control-flow/control-flow';
 import { Signal } from './signal/signal';
 import { Todolist } from './todolist/todolist';
 import { Directives } from './directives/directives';
+import { Header } from './header/header';
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal, Todolist, Directives],
+  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal, Todolist, Directives, RouterOutlet, Header],
   templateUrl: './app.html', //view
   styleUrl: './app.css'
 })
