@@ -45,3 +45,50 @@
 
 <header></header>
 <router-outlet />
+
+<reactive-form />
+
+<app-p-c user="shreya" />
+<app-p-c user="gogo" />
+<app-p-c [user]="user" />
+<app-p-c [user]="selectedUser.value" [city]="userCity.value" />
+
+<select #selectedUser (change)="onChangeUser(selectedUser.value)">
+  <option value="shreya">shreya</option>
+  <option value="coco">coco</option>
+  <option value="gogo">gogo</option>
+  <option value="momo">momo</option>
+  <option value="lolo">lolo</option>
+</select>
+
+<select #userCity (change)="(0)">
+  <option value="bhilai">bhilai</option>
+  <option value="dallas">dallas</option>
+  <option value="chicago">chicago</option>
+  <option value="austin">austin</option>
+  <option value="raipur">raipur</option>
+</select>
+
+<app-p-c (getUsers)="handleUsers($event)" />
+
+<app-display-users-parent />
+
+<ul>
+  @for (user of users; track user){
+  <li>{{ user }}</li>
+  }
+</ul>
+
+<h2>
+  {{ amount | currencyConverter : 12 }}
+</h2>
+
+<h2>
+  {{ amount | currencyConverter }}
+</h2>
+
+<h2>
+  {{ amount | currencyConverter : 30 }}
+</h2>
+
+<app-users-parent />

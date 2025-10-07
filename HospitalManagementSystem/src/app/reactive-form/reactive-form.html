@@ -1,0 +1,58 @@
+<p>reactive-form works!</p>
+
+<h1>Basics of reactive forms</h1>
+<form accept="" class="form">
+  <input type="text" placeholder="enter username" [formControl]="username" />
+  <input type="password" placeholder="enter password" [formControl]="password" />
+  <button type="button" (click)="displayVal()">Login</button>
+
+  <button type="button" (click)="setVal()">set values</button>
+</form>
+
+<h3>{{ username.value }}</h3>
+<h3>{{ password.value }}</h3>
+
+<h1>form grouping</h1>
+
+<form action="" method="get" class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="enter username" formControlName="grpUsername" />
+  <span *ngIf="name()?.hasError('required')"> name is required</span>
+  <span *ngIf="name()?.invalid && (name()?.dirty || name()?.touched)">
+    invalid, dirty/ tovuhed</span
+  >
+  <input type="text" placeholder="enter password" formControlName="grpPassword" />
+  <span *ngIf="passwrd()?.hasError('required')"> passwrod is required</span>
+  <span *ngIf="passwrd()?.invalid && (passwrd()?.dirty || passwrd()?.touched)">
+    invalid, dirty/ tovuhed</span
+  >
+  <input type="text" placeholder="enter email" formControlName="grpEmail" />
+  <span *ngIf="email()?.hasError('email')"> invalid email</span>
+  <span *ngIf="email()?.hasError('required')"> email is required</span>
+  <span *ngIf="email()?.invalid && (email()?.dirty || email()?.touched)">
+    invalid, dirty/ tovuhed
+  </span>
+
+  <button>Submit</button>
+  <button type="button" (click)="setVal01()">Set button</button>
+</form>
+
+<h3>{{ profileForm.value.grpUsername }}</h3>
+<h3>{{ profileForm.value.grpPassword }}</h3>
+<h3>{{ profileForm.value.grpEmail }}</h3>
+
+<h1>Template driven</h1>
+
+<!-- <formclass="form" (ngSubmit)="addDetails(userForm)">
+  <input type="text" required placeholder="enter username" name="username" />
+  <input type="text" placeholder="enter password" name="password" ngModel />
+  <select name="gender" ngModel>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+
+  <button>Add User</button>
+</form> -->
+
+<!-- <h3>{{ userDeets?.username }}</h3>
+<h3>{{ userDeets?.password }}</h3>
+<h3>{{ userDeets?.gender }}</h3> -->

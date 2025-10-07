@@ -9,11 +9,16 @@ import { Signal } from './signal/signal';
 import { Todolist } from './todolist/todolist';
 import { Directives } from './directives/directives';
 import { Header } from './header/header';
+import { ReactiveForm } from './reactive-form/reactive-form';
+import { PC } from './p-c/p-c';
+import { CurrencyConverterPipe } from './pipe/currency-converter-pipe';
+import { DisplayUsersParent } from './display-users-parent/display-users-parent';
+import { UsersParent } from './lifecyclemethods/users-parent/users-parent';
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal, Todolist, Directives, RouterOutlet, Header],
+  imports: [FormsModule, Login, Profile, EventListener, ControlFlow, Signal, Todolist, Directives, RouterOutlet, Header, ReactiveForm, PC, CurrencyConverterPipe, DisplayUsersParent, UsersParent ],
   templateUrl: './app.html', //view
   styleUrl: './app.css'
 })
@@ -29,4 +34,18 @@ export class App {
     this.someVals.push(this.someVal)
     this.someVal = ""
   }
+
+  user='bruce'
+
+  onChangeUser(user:string){
+    this.user=user
+  }
+
+  users : string[] | undefined;
+
+  handleUsers(users:string[]){
+    this.users = users;
+  }
+
+  amount = 10;
 }

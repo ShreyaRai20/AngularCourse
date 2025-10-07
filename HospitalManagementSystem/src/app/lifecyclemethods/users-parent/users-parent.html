@@ -1,0 +1,33 @@
+<h1>Life Cycle Methods</h1>
+
+@if(display){
+<app-users #user [count]="count" />
+}
+
+<button
+  (click)="handleClick()"
+  style="
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+  "
+>
+  show app-user
+</button>
+
+<button
+  (click)="handleCounter()"
+  style="
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+  "
+>
+  {{ count }}
+</button>

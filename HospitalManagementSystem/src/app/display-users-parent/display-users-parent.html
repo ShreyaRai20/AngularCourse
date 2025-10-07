@@ -1,0 +1,21 @@
+<H1>display-users-parent</H1>
+
+<app-display-users user="shreya01" />
+
+<app-display-users [user]="user" />
+
+<app-display-users [user]="users.value" />
+
+<select #users (change)="(0)">
+  <option value="sh">sh</option>
+  <option value="re">re</option>
+  <option value="ya">ya</option>
+  <option value="rai">rai</option>
+</select>
+
+<app-display-users (getUsers)="handleUsers($event)" />
+
+<h3>Users:</h3>
+@for (user of usersFromChild; track user){
+<h4>{{ user }}</h4>
+}

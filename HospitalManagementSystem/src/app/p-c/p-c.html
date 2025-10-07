@@ -1,0 +1,10 @@
+<p>p-c works!</p>
+
+<h1>PC</h1>
+<h2>user name is {{ user }}</h2>
+
+<h2>user city is {{ city }}</h2>
+
+<button (click)="printUsers()">get users</button>
+
+<button (click)="this.getUsers.emit(this.users)">get users</button>
